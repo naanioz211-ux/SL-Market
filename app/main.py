@@ -5,8 +5,7 @@ from fastapi.responses import HTMLResponse
 from sqlalchemy import select, func
 from .db import Base, engine, SessionLocal
 from .models import Merchant, Product, Order
-from .bot import build_application, start_bot
-
+from .bot import start_bot
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
